@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+	<meta charset="UTF-8">
+	<script>if (navigator.userAgent.match(/MSIE|Internet Explorer/i) || navigator.userAgent.match(/Trident\/7\..*?rv:11/i)) { var href = document.location.href; if (!href.match(/[?&]nowprocket/)) { if (href.indexOf("?") == -1) { if (href.indexOf("#") == -1) { document.location.href = href + "?nowprocket=1" } else { document.location.href = href.replace("#", "?nowprocket=1#") } } else { if (href.indexOf("#") == -1) { document.location.href = href + "&nowprocket=1" } else { document.location.href = href.replace("#", "&nowprocket=1#") } } } }</script>
+	<script>class RocketLazyLoadScripts { constructor(e) { this.triggerEvents = e, this.eventOptions = { passive: !0 }, this.userEventHandler = this.triggerListener.bind(this), this.delayedScripts = { normal: [], async: [], defer: [] }, this.allJQueries = [] } _addUserInteractionListener(e) { this.triggerEvents.forEach((t => window.addEventListener(t, e.userEventHandler, e.eventOptions))) } _removeUserInteractionListener(e) { this.triggerEvents.forEach((t => window.removeEventListener(t, e.userEventHandler, e.eventOptions))) } _interceptClicks(e) { e.interceptedClicks = [], e.clickHandler = e._saveClicks.bind(e), window.addEventListener("click", e.clickHandler) } _saveClicks(e) { this.interceptedClicks.push(e), e.target.matches('a[href="#"], a[href="#"] *') && e.preventDefault() } _replayClicks() { window.removeEventListener("click", this.clickHandler), this.interceptedClicks.forEach((e => { e.target.dispatchEvent(new MouseEvent("click", { view: e.view, bubbles: !0, cancelable: !0 })) })) } triggerListener() { this._removeUserInteractionListener(this), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", this._loadEverythingNow.bind(this)) : this._loadEverythingNow() } async _loadEverythingNow() { this._delayEventListeners(), this._delayJQueryReady(this), this._handleDocumentWrite(), this._registerAllDelayedScripts(), this._preloadAllScripts(), await this._loadScriptsFromList(this.delayedScripts.normal), await this._loadScriptsFromList(this.delayedScripts.defer), await this._loadScriptsFromList(this.delayedScripts.async), await this._triggerDOMContentLoaded(), await this._triggerWindowLoad(), window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this._replayClicks() } _registerAllDelayedScripts() { document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e => { e.hasAttribute("src") ? e.hasAttribute("async") && !1 !== e.async ? this.delayedScripts.async.push(e) : e.hasAttribute("defer") && !1 !== e.defer || "module" === e.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(e) : this.delayedScripts.normal.push(e) : this.delayedScripts.normal.push(e) })) } async _transformScript(e) { return await this._requestAnimFrame(), new Promise((t => { const n = document.createElement("script");[...e.attributes].forEach((e => { let t = e.nodeName; "type" !== t && ("data-rocket-type" === t && (t = "type"), n.setAttribute(t, e.nodeValue)) })), e.hasAttribute("src") ? (n.addEventListener("load", t), n.addEventListener("error", t)) : (n.text = e.text, t()), e.parentNode.replaceChild(n, e) })) } async _loadScriptsFromList(e) { const t = e.shift(); return t ? (await this._transformScript(t), this._loadScriptsFromList(e)) : Promise.resolve() } _preloadAllScripts() { var e = document.createDocumentFragment();[...this.delayedScripts.normal, ...this.delayedScripts.defer, ...this.delayedScripts.async].forEach((t => { const n = t.getAttribute("src"); if (n) { const t = document.createElement("link"); t.href = n, t.rel = "preload", t.as = "script", e.appendChild(t) } })), document.head.appendChild(e) } _delayEventListeners() { let e = {}; function t(t, n) { !function (t) { function n(n) { return e[t].eventsToRewrite.indexOf(n) >= 0 ? "rocket-" + n : n } e[t] || (e[t] = { originalFunctions: { add: t.addEventListener, remove: t.removeEventListener }, eventsToRewrite: [] }, t.addEventListener = function () { arguments[0] = n(arguments[0]), e[t].originalFunctions.add.apply(t, arguments) }, t.removeEventListener = function () { arguments[0] = n(arguments[0]), e[t].originalFunctions.remove.apply(t, arguments) }) }(t), e[t].eventsToRewrite.push(n) } function n(e, t) { let n = e[t]; Object.defineProperty(e, t, { get: () => n || function () { }, set(i) { e["rocket" + t] = n = i } }) } t(document, "DOMContentLoaded"), t(window, "DOMContentLoaded"), t(window, "load"), t(window, "pageshow"), t(document, "readystatechange"), n(document, "onreadystatechange"), n(window, "onload"), n(window, "onpageshow") } _delayJQueryReady(e) { let t = window.jQuery; Object.defineProperty(window, "jQuery", { get: () => t, set(n) { if (n && n.fn && !e.allJQueries.includes(n)) { n.fn.ready = n.fn.init.prototype.ready = function (t) { e.domReadyFired ? t.bind(document)(n) : document.addEventListener("rocket-DOMContentLoaded", (() => t.bind(document)(n))) }; const t = n.fn.on; n.fn.on = n.fn.init.prototype.on = function () { if (this[0] === window) { function e(e) { return e.split(" ").map((e => "load" === e || 0 === e.indexOf("load.") ? "rocket-jquery-load" : e)).join(" ") } "string" == typeof arguments[0] || arguments[0] instanceof String ? arguments[0] = e(arguments[0]) : "object" == typeof arguments[0] && Object.keys(arguments[0]).forEach((t => { delete Object.assign(arguments[0], { [e(t)]: arguments[0][t] })[t] })) } return t.apply(this, arguments), this }, e.allJQueries.push(n) } t = n } }) } async _triggerDOMContentLoaded() { this.domReadyFired = !0, await this._requestAnimFrame(), document.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this._requestAnimFrame(), window.dispatchEvent(new Event("rocket-DOMContentLoaded")), await this._requestAnimFrame(), document.dispatchEvent(new Event("rocket-readystatechange")), await this._requestAnimFrame(), document.rocketonreadystatechange && document.rocketonreadystatechange() } async _triggerWindowLoad() { await this._requestAnimFrame(), window.dispatchEvent(new Event("rocket-load")), await this._requestAnimFrame(), window.rocketonload && window.rocketonload(), await this._requestAnimFrame(), this.allJQueries.forEach((e => e(window).trigger("rocket-jquery-load"))), window.dispatchEvent(new Event("rocket-pageshow")), await this._requestAnimFrame(), window.rocketonpageshow && window.rocketonpageshow() } _handleDocumentWrite() { const e = new Map; document.write = document.writeln = function (t) { const n = document.currentScript, i = document.createRange(), r = n.parentElement; let a = e.get(n); void 0 === a && (a = n.nextSibling, e.set(n, a)); const s = document.createDocumentFragment(); i.setStart(s, 0), s.appendChild(i.createContextualFragment(t)), r.insertBefore(s, a) } } async _requestAnimFrame() { return new Promise((e => requestAnimationFrame(e))) } static run() { const e = new RocketLazyLoadScripts(["keydown", "mousedown", "mousemove", "touchmove", "touchstart", "touchend", "wheel"]); e._addUserInteractionListener(e), e._interceptClicks(e) } } RocketLazyLoadScripts.run();</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name='robots' content='max-image-preview:large' />
+
+	<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+	<script data-cfasync="false" data-pagespeed-no-defer>
+		var gtm4wp_datalayer_name = "dataLayer";
+		var dataLayer = dataLayer || [];
+	</script>
+	<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO Premium plugin v14.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>▷ Estanterías Metálicas | Implementación de Almacenes ✔️</title>
+	<link rel="preload" as="style"
+		href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap"
+		media="print" onload="this.media='all'" /><noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap" />
+	</noscript>
+	<link rel="preload" as="style"
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap"
+		media="print" onload="this.media='all'" /><noscript>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" />
+	</noscript>
+	<link rel="stylesheet" href="wp-content/cache/min/1/e5193baef4bcb6975b74527742161cad.css" media="all"
+		data-minify="1" />
+	<meta name="description"
+		content="Venta de estanterías metálicas industriales para almacenes a precios accesibles, somos fabricantes. Realiza tus consultas ☎️ +51 936 407 935" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="index.html" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="▷ Estanterías Metálicas | Implementación de Almacenes ✔️" />
+	<meta property="og:description"
+		content="Venta de estanterías metálicas industriales para almacenes a precios accesibles, somos fabricantes. Realiza tus consultas ☎️ +51 936 407 935" />
+	<meta property="og:url" content="index.html" />
+	<meta property="og:site_name" content="Mobiliario Metalico Sierra Sur S.A.C" />
+	<meta property="article:modified_time" content="2023-01-11T23:52:47+00:00" />
+	<meta property="og:image" content="wp-content/uploads/check-emogi-azul.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+	<link href='https://fonts.gstatic.com/' crossorigin rel='preconnect' />
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+
+
+	<style id='global-styles-inline-css' type='text/css'>
+		body {
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(83, 177, 133) 100%);
+			--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+			--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+			--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+			--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+			--wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+			--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+			--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+			--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flow>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-flow>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-flow>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-constrained>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-constrained>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: var(--wp--style--global--content-size);
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignwide {
+			max-width: var(--wp--style--global--wide-size);
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		body .is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		body .is-layout-flex>* {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		.wp-block-navigation a:where(:not(.wp-element-button)) {
+			color: inherit;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.wp-block-pullquote {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+	</style>
+
+
+
+
+
+
+
+
+
+	<style id='rocket-lazyload-inline-css' type='text/css'>
+		.rll-youtube-player {
+			position: relative;
+			padding-bottom: 56.23%;
+			height: 0;
+			overflow: hidden;
+			max-width: 100%;
+		}
+
+		.rll-youtube-player iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			background: 0 0
+		}
+
+		.rll-youtube-player img {
+			bottom: 0;
+			display: block;
+			left: 0;
+			margin: auto;
+			max-width: 100%;
+			width: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			border: none;
+			height: auto;
+			cursor: pointer;
+			-webkit-transition: .4s all;
+			-moz-transition: .4s all;
+			transition: .4s all
+		}
+
+		.rll-youtube-player img:hover {
+			-webkit-filter: brightness(75%)
+		}
+
+		.rll-youtube-player .play {
+			height: 72px;
+			width: 72px;
+			left: 50%;
+			top: 50%;
+			margin-left: -36px;
+			margin-top: -36px;
+			position: absolute;
+			background: url(wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;
+			cursor: pointer
+		}
+	</style>
+
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link rel="https://api.w.org/" href="wp-json/index.html" />
+	<link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/18.json" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.html?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+	<meta name="generator" content="WordPress 6.2.2" />
+	<link rel='shortlink' href='index.html' />
+
+	<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- GTM Container placement set to footer -->
+	<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">
+		var dataLayer_content = { "pagePostType": "frontpage", "pagePostType2": "single-page", "pagePostAuthor": "Sagama Industrial" };
+		dataLayer.push(dataLayer_content);
+	</script>
+	<script type="rocketlazyloadscript" data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T6N4587');
+</script>
+	<!-- End Google Tag Manager -->
+	<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+	<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "LocalBusiness",
+  "name": "MOBILIARIO METALICO SIERRA SUR S.A.C",
+  "url": "https://sagama-industrial.com/",
+
+  "description": "Venta de estanterías metálicas industriales para almacenes a precios accesibles, compra el mejor estante metálico para tu industria ¡Ingresa ya!",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "MZA. Z LOTE. 01 SEC. LOS JASMINES EL VALLE LIMA - HUAROCHIRI - SAN ANTONIO",
+    "addressLocality": "Lima",
+    "addressRegion": "Lima",
+    "postalCode": "+51",
+    "addressCountry": "Perú"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "11.890771747394288",
+    "longitude": "76.97118301149564",
+  },
+  "hasMap": "https://goo.gl/maps/nz5iYTm1qwCoHv287",
+  "openingHours": "lu,mar, mier, juev ,vier 08:00-16:00 Sa 08:00-01:00",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "939 280 500",
+    "contactType": "General"
+  }
+}
+ </script>
+	<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "product",
+  "brand": {
+	"@type" : "Brand",
+    	"logo" : "https://mobiliariometalicosierrasursac.com/"
+},
+  "url": "https://mobiliariometalicosierrasursac.com/",
+  "name": "Venta de Estanterías Metálicas | Precios — MOBILIARIO METALICO SIERRA SUR S.A.C. ",
+  "description": "Venta de estanterías metálicas industriales para almacenes a precios accesibles, compra el mejor estante metálico para tu industria ¡Ingresa ya!",
+   "aggregateRating": {
+    "@type": "aggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "5"
+  }
+}
+ </script>
+	<meta name="generator"
+		content="Elementor 3.14.1; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+		<link rel="icon" href="wp-content/uploads/iconologo.png" sizes="40x40" />
+	<link rel="icon" href="wp-content/uploads/iconologo.png" sizes="200x200" />
+	<link rel="apple-touch-icon" href="wp-content/uploads/iconologo.png" />
+	<meta name="msapplication-TileImage"
+	content="wp-content/uploads/iconologo.png"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="rsslatest.xml" />
+	<style type="text/css" id="wp-custom-css">
+		:root {
+			--main-font: 'Roboto', sans-serif;
+		}
+
+		.h2-camuflados {
+			color: var(--e-global-color-text);
+			display: inline;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 22px;
+		}
+	</style>
+	<noscript>
+		<style id="rocket-lazyload-nojs-css">
+			.rll-youtube-player,
+			[data-lazy-src] {
+				display: none !important;
+			}
+		</style>
+	</noscript>
+
+	<!-- datos estructurados single page -->
+	<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Article",
+        "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": ""
+    },
+        "headline": "",
+        "description": "",
+        "image": {
+            "@type": "ImageObject",
+            "url": "",
+            "width": "",
+            "height": ""
+        },
+        "author": {
+            "@type": "Organization",
+            "name": ""
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "",
+                "width": "",
+                "height": ""
+            }
+        },
+        "articleBody": "",
+        "datePublished": "",
+        "dateModified": ""
+    }
+</script>
+</head>
+
+<body data-rsssl=1
+	class="home page-template page-template-elementor_header_footer page page-id-18 wp-custom-logo elementor-default elementor-template-full-width elementor-kit-11 elementor-page elementor-page-18">
+
+	<!-- header -->
+	<header class="main-header" id="header">
+
+		<div class="main-attributes-header">
+			<div class="child-attributes-header">
+
+
+				<div class="date-contact-before-header">
+
+					<!-- location -->
+					<div class="main-date-before-header location">
+						<a target="_blank" href="https://goo.gl/maps/LX8hDUAn44FvFib29">
+							<i class="icon-date icon-location"></i>
+							<div class="text-date">MZA. Z LOTE. 01 SEC. LOS JASMINES EL VALLE LIMA - HUAROCHIRI - SAN
+								ANTONIO</div>
+						</a>
+					</div>
+
+					<div class="box-before-menu-navegacion">
+						<nav id="before-menu-navegacion" class="before-menu-navegacion">
+							<ul id="list-before-menu-navegacion" class="list-before-menu-navegacion">
+								<li id="menu-item-2961"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2961"><a
+										href="index.html">Sobre Nosotros</a></li>
+										<li id="menu-item-2960"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2960"><a
+										href="contacto/index.html">Contacto</a></li>
+								<li id="menu-item-2959"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2959"><a
+										href="blog/index.html">Direccion</a></li>
+							</ul>
+						</nav>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="main-logo-search-menu-navegacion">
+			<div class="child-logo-search-menu-navegacion">
+
+
+				<!-- logo -->
+
+				<div class="logo">
+					<img src="wp-content\uploads\logo.png"><noscript><img width="182" height="56"
+							src="wp-content/uploads/cropped-logo.png" class="custom-logo"
+							alt="MOBILIARIO METALICO SIERRA SUR S.A.C." decoding="async" title="" /></noscript></a>
+				</div>
+
+				<div class="box-date-contact-header">
+
+					<!-- email -->
+					<div class="date-contact-header email">
+						<a target="_blank" href="mobiliariometalicosierrasur@gmail.com">
+							<i class="icon-date icon-mail"></i>
+							<div class="text-date">mobiliariometalicosierrasur@gmail.com</div>
+						</a>
+					</div>
+
+					<!-- whatsapp -->
+					<div class="date-contact-header phone">
+						<a target="_blank" href="https://wa.me/message/BQR52BRJJECWO1">
+							<i class="icon-date icon-whatsapp"></i>
+							<div class="text-date">936 407 935</div>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="child-header">
+
+
+			<!-- logo -->
+
+			<div class="logo-mobile">
+				<img src="wp-content\uploads\logo.png"><noscript><img width="182" height="56"
+						src="wp-content/uploads/cropped-logo.png" class="custom-logo"
+						alt="MOBILIARIO METALICO SIERRA SUR S.A.C." decoding="async" title="" /></noscript></a>
+			</div>
+
+			<div class="box-menu-navegacion">
+				<nav id="menu" class="menu">
+					<ul id="menu-main-menu" class="menu-navegacion">
+						<li id="menu-item-2934"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2934">
+							<a href="escritoriometalico.html">ESCRITORIO METÁLICO</a><span
+								class="icon-angle-down arrow-bottom"></span>
+
+						</li>
+						<li id="menu-item-2933"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2933">
+							<a href="roperometalico.html">ROPERO METÁLICO</a><span
+								class="icon-angle-down arrow-bottom"></span>
+						</li>
+						<li id="menu-item-2937"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2937">
+							<a href="archivadores.html">Archivadores Metálicos</a><span
+								class="icon-angle-down arrow-bottom"></span>
+						</li>
+						<li id="menu-item-2938"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2938">
+							<a href="armarios.html">Armarios Metálicos</a><span
+								class="icon-angle-down arrow-bottom"></span>
+
+						</li>
+						<li id="menu-item-2939"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2939">
+							<a href="lokers.html">Lockers Metálicos</a><span
+								class="icon-angle-down arrow-bottom"></span>
+
+						</li>
+						<li id="menu-item-2940"
+							class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2940"><a
+								href="vitrina.html">VITRINA CLÍNICO METÁLICO</a><span
+								class="icon-angle-down arrow-bottom"></span></li>
+					</ul>
+				</nav>
+
+				<button class="icon-menu btn-menu-hamburguesa" id="btn-hamburguesa"></button>
+
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<div data-elementor-type="wp-page" data-elementor-id="18" class="elementor elementor-18"
+			data-elementor-post-type="page">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-c1c1643 elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="c1c1643" data-element_type="section">
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-51758a9"
+						data-id="51758a9" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-763e49c elementor-widget elementor-widget-image"
+								data-id="763e49c" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<style>
+										/*! elementor - v3.14.0 - 26-06-2023 */
+										.elementor-widget-image {
+											text-align: center
+										}
+
+										.elementor-widget-image a {
+											display: inline-block
+										}
+
+										.elementor-widget-image a img[src$=".svg"] {
+											width: 48px
+										}
+
+										.elementor-widget-image img {
+											vertical-align: middle;
+											display: inline-block
+										}
+									</style> <img decoding="async" width="488" height="504" src=""
+										alt="check-emogi-azul" title="check-emogi-azul" data-lazy-src=""><noscript><img
+											decoding="async" width="488" height="504" src=""
+											class="attachment-full size-full wp-image-8233" alt="check-emogi-azul"
+											title="check-emogi-azul"></noscript>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-50cf87d elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle"
+				data-id="50cf87d" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5274375"
+						data-id="5274375" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-673486c elementor-widget elementor-widget-heading"
+								data-id="673486c" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<style>
+										/*! elementor - v3.14.0 - 26-06-2023 */
+										.elementor-heading-title {
+											padding: 0;
+											margin: 0;
+											line-height: 1
+										}
+
+										.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a {
+											color: inherit;
+											font-size: inherit;
+											line-height: inherit
+										}
+
+										.elementor-widget-heading .elementor-heading-title.elementor-size-small {
+											font-size: 15px
+										}
+
+										.elementor-widget-heading .elementor-heading-title.elementor-size-medium {
+											font-size: 19px
+										}
+
+										.elementor-widget-heading .elementor-heading-title.elementor-size-large {
+											font-size: 29px
+										}
+
+										.elementor-widget-heading .elementor-heading-title.elementor-size-xl {
+											font-size: 39px
+										}
+
+										.elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
+											font-size: 59px
+										}
+									</style>
+									<h1 class="elementor-heading-title elementor-size-default">ARCHIVADORES
+										MET&Aacute;LICOS</h1>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-9adca15 elementor-widget elementor-widget-heading"
+								data-id="9adca15" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<p class="elementor-heading-title elementor-size-default">Tenemos la soluci&oacute;n
+										para la optimizaci&oacute;n y organizaci&oacute;n de tus insumos y materiales.
+									</p>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-21e2a1b elementor-tablet-align-center elementor-widget elementor-widget-button"
+								data-id="21e2a1b" data-element_type="widget" data-widget_type="button.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+										<a class="elementor-button elementor-button-link elementor-size-md"
+											href="https://wa.me/message/BQR52BRJJECWO1">
+											<span class="elementor-button-content-wrapper">
+												<span class="elementor-button-icon elementor-align-icon-left">
+													<i aria-hidden="true" class="fab fa-whatsapp"></i> </span>
+												<span class="elementor-button-text">CONT&Aacute;CTENOS</span>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-534d67d"
+						data-id="534d67d" data-element_type="column"
+						data-settings='{"background_background":"classic"}'>
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-cebddb7 elementor-button-align-center elementor-widget elementor-widget-form"
+								data-id="cebddb7" data-element_type="widget"
+								data-settings='{"step_next_label":"Next","step_previous_label":"Previous","button_width":"100","step_type":"number_text","step_icon_shape":"circle"}'
+								data-widget_type="form.default">
+								<div class="elementor-widget-container">
+									<style>
+										/*! elementor-pro - v3.14.0 - 26-06-2023 */
+										.elementor-button.elementor-hidden,
+										.elementor-hidden {
+											display: none
+										}
+
+										.e-form__step {
+											width: 100%
+										}
+
+										.e-form__step:not(.elementor-hidden) {
+											display: flex;
+											flex-wrap: wrap
+										}
+
+										.e-form__buttons {
+											flex-wrap: wrap
+										}
+
+										.e-form__buttons,
+										.e-form__buttons__wrapper {
+											display: flex
+										}
+
+										.e-form__indicators {
+											display: flex;
+											justify-content: space-between;
+											align-items: center;
+											flex-wrap: nowrap;
+											font-size: 13px;
+											margin-bottom: var(--e-form-steps-indicators-spacing)
+										}
+
+										.e-form__indicators__indicator {
+											display: flex;
+											flex-direction: column;
+											align-items: center;
+											justify-content: center;
+											flex-basis: 0;
+											padding: 0 var(--e-form-steps-divider-gap)
+										}
+
+										.e-form__indicators__indicator__progress {
+											width: 100%;
+											position: relative;
+											background-color: var(--e-form-steps-indicator-progress-background-color);
+											border-radius: var(--e-form-steps-indicator-progress-border-radius);
+											overflow: hidden
+										}
+
+										.e-form__indicators__indicator__progress__meter {
+											width: var(--e-form-steps-indicator-progress-meter-width, 0);
+											height: var(--e-form-steps-indicator-progress-height);
+											line-height: var(--e-form-steps-indicator-progress-height);
+											padding-right: 15px;
+											border-radius: var(--e-form-steps-indicator-progress-border-radius);
+											background-color: var(--e-form-steps-indicator-progress-color);
+											color: var(--e-form-steps-indicator-progress-meter-color);
+											text-align: right;
+											transition: width .1s linear
+										}
+
+										.e-form__indicators__indicator:first-child {
+											padding-left: 0
+										}
+
+										.e-form__indicators__indicator:last-child {
+											padding-right: 0
+										}
+
+										.e-form__indicators__indicator--state-inactive {
+											color: var(--e-form-steps-indicator-inactive-primary-color, #c2cbd2)
+										}
+
+										.e-form__indicators__indicator--state-inactive [class*=indicator--shape-]:not(.e-form__indicators__indicator--shape-none) {
+											background-color: var(--e-form-steps-indicator-inactive-secondary-color, #fff)
+										}
+
+										.e-form__indicators__indicator--state-inactive object,
+										.e-form__indicators__indicator--state-inactive svg {
+											fill: var(--e-form-steps-indicator-inactive-primary-color, #c2cbd2)
+										}
+
+										.e-form__indicators__indicator--state-active {
+											color: var(--e-form-steps-indicator-active-primary-color, #39b54a);
+											border-color: var(--e-form-steps-indicator-active-secondary-color, #fff)
+										}
+
+										.e-form__indicators__indicator--state-active [class*=indicator--shape-]:not(.e-form__indicators__indicator--shape-none) {
+											background-color: var(--e-form-steps-indicator-active-secondary-color, #fff)
+										}
+
+										.e-form__indicators__indicator--state-active object,
+										.e-form__indicators__indicator--state-active svg {
+											fill: var(--e-form-steps-indicator-active-primary-color, #39b54a)
+										}
+
+										.e-form__indicators__indicator--state-completed {
+											color: var(--e-form-steps-indicator-completed-secondary-color, #fff)
+										}
+
+										.e-form__indicators__indicator--state-completed [class*=indicator--shape-]:not(.e-form__indicators__indicator--shape-none) {
+											background-color: var(--e-form-steps-indicator-completed-primary-color, #39b54a)
+										}
+
+										.e-form__indicators__indicator--state-completed .e-form__indicators__indicator__label {
+											color: var(--e-form-steps-indicator-completed-primary-color, #39b54a)
+										}
+
+										.e-form__indicators__indicator--state-completed .e-form__indicators__indicator--shape-none {
+											color: var(--e-form-steps-indicator-completed-primary-color, #39b54a);
+											background-color: initial
+										}
+
+										.e-form__indicators__indicator--state-completed object,
+										.e-form__indicators__indicator--state-completed svg {
+											fill: var(--e-form-steps-indicator-completed-secondary-color, #fff)
+										}
+
+										.e-form__indicators__indicator__icon {
+											width: var(--e-form-steps-indicator-padding, 30px);
+											height: var(--e-form-steps-indicator-padding, 30px);
+											font-size: var(--e-form-steps-indicator-icon-size);
+											border-width: 1px;
+											border-style: solid;
+											display: flex;
+											justify-content: center;
+											align-items: center;
+											overflow: hidden;
+											margin-bottom: 10px
+										}
+
+										.e-form__indicators__indicator__icon img,
+										.e-form__indicators__indicator__icon object,
+										.e-form__indicators__indicator__icon svg {
+											width: var(--e-form-steps-indicator-icon-size);
+											height: auto
+										}
+
+										.e-form__indicators__indicator__icon .e-font-icon-svg {
+											height: 1em
+										}
+
+										.e-form__indicators__indicator__number {
+											width: var(--e-form-steps-indicator-padding, 30px);
+											height: var(--e-form-steps-indicator-padding, 30px);
+											border-width: 1px;
+											border-style: solid;
+											display: flex;
+											justify-content: center;
+											align-items: center;
+											margin-bottom: 10px
+										}
+
+										.e-form__indicators__indicator--shape-circle {
+											border-radius: 50%
+										}
+
+										.e-form__indicators__indicator--shape-square {
+											border-radius: 0
+										}
+
+										.e-form__indicators__indicator--shape-rounded {
+											border-radius: 5px
+										}
+
+										.e-form__indicators__indicator--shape-none {
+											border: 0
+										}
+
+										.e-form__indicators__indicator__label {
+											text-align: center
+										}
+
+										.e-form__indicators__indicator__separator {
+											width: 100%;
+											height: var(--e-form-steps-divider-width);
+											background-color: #babfc5
+										}
+
+										.e-form__indicators--type-icon,
+										.e-form__indicators--type-icon_text,
+										.e-form__indicators--type-number,
+										.e-form__indicators--type-number_text {
+											align-items: flex-start
+										}
+
+										.e-form__indicators--type-icon .e-form__indicators__indicator__separator,
+										.e-form__indicators--type-icon_text .e-form__indicators__indicator__separator,
+										.e-form__indicators--type-number .e-form__indicators__indicator__separator,
+										.e-form__indicators--type-number_text .e-form__indicators__indicator__separator {
+											margin-top: calc(var(--e-form-steps-indicator-padding, 30px) / 2 - var(--e-form-steps-divider-width, 1px) / 2)
+										}
+
+										.elementor-field-type-hidden {
+											display: none
+										}
+
+										.elementor-field-type-html {
+											display: inline-block
+										}
+
+										.elementor-login .elementor-lost-password,
+										.elementor-login .elementor-remember-me {
+											font-size: .85em
+										}
+
+										.elementor-field-type-recaptcha_v3 .elementor-field-label {
+											display: none
+										}
+
+										.elementor-field-type-recaptcha_v3 .grecaptcha-badge {
+											z-index: 1
+										}
+
+										.elementor-button .elementor-form-spinner {
+											order: 3
+										}
+
+										.elementor-form .elementor-button>span {
+											display: flex;
+											justify-content: center;
+											align-items: center
+										}
+
+										.elementor-form .elementor-button .elementor-button-text {
+											white-space: normal;
+											flex-grow: 0
+										}
+
+										.elementor-form .elementor-button svg {
+											height: auto
+										}
+
+										.elementor-form .elementor-button .e-font-icon-svg {
+											height: 1em
+										}
+
+										.elementor-select-wrapper .select-caret-down-wrapper {
+											position: absolute;
+											top: 50%;
+											transform: translateY(-50%);
+											inset-inline-end: 10px;
+											pointer-events: none;
+											font-size: 11px
+										}
+
+										.elementor-select-wrapper .select-caret-down-wrapper svg {
+											display: unset;
+											width: 1em;
+											aspect-ratio: unset;
+											fill: currentColor
+										}
+
+										.elementor-select-wrapper .select-caret-down-wrapper i {
+											font-size: 19px;
+											line-height: 2
+										}
+
+										.elementor-select-wrapper.remove-before:before {
+											content: "" !important
+										}
+									</style>
+									<form class="elementor-form" method="post" name="New Form">
+										<input type="hidden" name="post_id" value="18">
+										<input type="hidden" name="form_id" value="cebddb7">
+										<input type="hidden" name="referer_title"
+											value="&#9655; Estanter&iacute;as Met&aacute;licas | Implementaci&oacute;n de Almacenes &#10004;&#65039;">
+
+										<input type="hidden" name="queried_id" value="18">
+
+										<div class="elementor-form-fields-wrapper elementor-labels-">
+											<div
+												class="elementor-field-type-html elementor-field-group elementor-column elementor-field-group-nombre elementor-col-100">
+												<h6 style="text-align:center">Solicitar Cotizaci&oacute;n</h6>
+											</div>
+											<div
+												class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_7bda6ab elementor-col-50 elementor-field-required">
+												<label for="form-field-field_7bda6ab"
+													class="elementor-field-label elementor-screen-only">
+													Nombre </label>
+												<input size="1" type="text" name="form_fields[field_7bda6ab]"
+													id="form-field-field_7bda6ab"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Nombre" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-apellido elementor-col-50 elementor-field-required">
+												<label for="form-field-apellido"
+													class="elementor-field-label elementor-screen-only">
+													Apellido </label>
+												<input size="1" type="text" name="form_fields[apellido]"
+													id="form-field-apellido"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Apellido" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-ruc elementor-col-50 elementor-field-required">
+												<label for="form-field-ruc"
+													class="elementor-field-label elementor-screen-only">
+													RUC </label>
+												<input size="1" type="text" name="form_fields[ruc]" id="form-field-ruc"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="RUC" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50 elementor-field-required">
+												<label for="form-field-email"
+													class="elementor-field-label elementor-screen-only">
+													Email </label>
+												<input size="1" type="email" name="form_fields[email]"
+													id="form-field-email"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Correo" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-telefono elementor-col-100 elementor-field-required">
+												<label for="form-field-telefono"
+													class="elementor-field-label elementor-screen-only">
+													Tel&eacute;fono </label>
+												<input size="1" type="tel" name="form_fields[telefono]"
+													id="form-field-telefono"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Tel&eacute;fono" required="required"
+													aria-required="true" pattern="[0-9()#&amp;+*-=.]+"
+													title="Solo se aceptan n&uacute;meros y caracteres de tel&eacute;fono (#,-,*,etc).">
+
+											</div>
+											<div
+												class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-mensaje elementor-col-100 elementor-field-required">
+												<label for="form-field-mensaje"
+													class="elementor-field-label elementor-screen-only">
+													Escribe su mensaje </label>
+												<textarea
+													class="elementor-field-textual elementor-field  elementor-size-sm"
+													name="form_fields[mensaje]" id="form-field-mensaje" rows="4"
+													placeholder="Escribe su mensaje" required="required"
+													aria-required="true"></textarea>
+											</div>
+											<div
+												class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+												<button type="submit" class="elementor-button elementor-size-sm">
+													<span>
+														<span class=" elementor-button-icon">
+														</span>
+														<span class="elementor-button-text">ENVIAR</span>
+													</span>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-a8d6ffc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="a8d6ffc" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-86bf111"
+						data-id="86bf111" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-45c98f3 elementor-widget elementor-widget-heading"
+								data-id="45c98f3" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h4 class="elementor-heading-title elementor-size-default">NUESTROS PRODUCTOS</h4>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-841fc6d elementor-widget elementor-widget-heading"
+								data-id="841fc6d" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<p class="elementor-heading-title elementor-size-default">Tenemos las mejores
+										soluciones de almacenamiento para tu empresa</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-f845cc4 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="f845cc4" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-wider">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f10228c"
+						data-id="f10228c" data-element_type="column"
+						data-settings='{"background_background":"classic"}'>
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-6a68191 elementor-widget elementor-widget-image"
+								data-id="6a68191" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2325"
+										alt="Venta de racks industriales en Lima, Per&uacute;"
+										title="Venta de racks industriales en Lima, Per&uacute;"
+										data-lazy-src="wp-content/uploads/archivador3puertas.jpg"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/archivador3puertas.jpg"
+											class="attachment-full size-full wp-image-2325"
+											alt="Venta de racks industriales en Lima, Per&uacute;"
+											title="Venta de racks industriales en Lima, Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-2c6c1c7 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="2c6c1c7" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-63764ec"
+										data-id="63764ec" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-94d3ca5 elementor-widget elementor-widget-heading"
+												data-id="94d3ca5" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="racks-industriales/index.html">ARCHIVADOR 3 GAVETAS
+															<br><span class="title-product-home">para tu
+																oficina</span></a></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-5d46bca elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="5d46bca" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-2033613"
+										data-id="2033613" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-60d6a20 elementor-widget elementor-widget-heading"
+												data-id="60d6a20" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Un
+														escritorio metálico es un tipo de mueble diseñado para trabajar
+														o estudiar, que está fabricado con materiales metálicos
+														comúnmente en oficinas, escuelas, talleres y otros entornos de
+														trabajo.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-e8f27f1 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="e8f27f1" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-fe5ca86"
+										data-id="fe5ca86" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-d9b3d53 elementor-button-success elementor-align-left elementor-mobile-align-left elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="d9b3d53" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-md"
+															href="racks-industriales/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3076564"
+										data-id="3076564" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-fde8238 elementor-align-right elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="fde8238" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-md"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-eb6522b"
+						data-id="eb6522b" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-cf485b4 elementor-widget elementor-widget-image"
+								data-id="cf485b4" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2326"
+										alt="Venta de Archivadores Met&aacute;licos Per&uacute;"
+										title="Venta de Archivadores Met&aacute;licos Per&uacute;"
+										data-lazy-src="wp-content/uploads/archivador4gavetas.jpg"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/archivador4gavetas.jpg"
+											class="attachment-full size-full wp-image-2326"
+											alt="Venta de Archivadores Met&aacute;licos Per&uacute;"
+											title="Venta de Archivadores Met&aacute;licos Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-5dcc68f elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="5dcc68f" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-8f2d943"
+										data-id="8f2d943" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-2302449 elementor-widget elementor-widget-heading"
+												data-id="2302449" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="archivadores-metalicos/index.html">ARCHIVADOR 4 <br>
+															GAVETAS <br><span class="title-product-home">para tu
+																oficina</span></a></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-d106edb elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="d106edb" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-60c39ad"
+										data-id="60c39ad" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-9d3c8c5 elementor-widget elementor-widget-heading"
+												data-id="9d3c8c5" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Un
+														archivador para oficina es una estructura normalmente
+														met&aacute;lica en el que se guardan archivos, papeles o
+														documentos que son de importancia para una empresa o
+														corporaci&oacute;n. </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-ed9bd57 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="ed9bd57" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4b3cf59"
+										data-id="4b3cf59" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-47803e2 elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="47803e2" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-md"
+															href="archivadores-metalicos/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-1a5f497"
+										data-id="1a5f497" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-e5b801c elementor-align-right elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="e5b801c" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-md"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-cd662db"
+						data-id="cd662db" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-186dd01 elementor-widget elementor-widget-image"
+								data-id="186dd01" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2327"
+										alt="Venta de Estantes M&oacute;viles en Lima, Per&uacute;"
+										title="Venta de Estantes M&oacute;viles en Lima, Per&uacute;"
+										data-lazy-src="wp-content/uploads/archivadornegro.jpg"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/archivadornegro.jpg"
+											class="attachment-full size-full wp-image-2327"
+											alt="Venta de Estantes M&oacute;viles en Lima, Per&uacute;"
+											title="Venta de Estantes M&oacute;viles en Lima, Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-4052892 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="4052892" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-ac6583e"
+										data-id="ac6583e" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-b18ab03 elementor-widget elementor-widget-heading"
+												data-id="b18ab03" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="estanterias-moviles/index.html">ARCHIVADOR 4 GAVETAS
+															NEGRO <br><span class="title-product-home">para tu
+																oficina</span></a></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-779ddcb elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="779ddcb" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-bca632e"
+										data-id="bca632e" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-918daeb elementor-widget elementor-widget-heading"
+												data-id="918daeb" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Las
+														estanter&iacute;as m&oacute;viles son un sistema de almacenaje
+														de alta densidad que proporciona un acceso sencillo a los
+														pallets de los autoelevadores convencionales.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-85ff75d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="85ff75d" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3ab6f7b"
+										data-id="3ab6f7b" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-7fa0c2a elementor-widget elementor-widget-button"
+												data-id="7fa0c2a" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-md"
+															href="estanterias-moviles/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8c2523a"
+										data-id="8c2523a" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-4022d4e elementor-align-right elementor-widget elementor-widget-button"
+												data-id="4022d4e" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-md"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-80dc6b8 elementor-section-content-middle elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="80dc6b8" data-element_type="section"
+				data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":2321,"url":"https:\/\/sagama-industrial.com\/wp-content\/uploads\/sagama-industrial.jpg"}],"background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_slide_transition":"fade","background_slideshow_transition_duration":500}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0ac7af4"
+						data-id="0ac7af4" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-e17610d elementor-widget elementor-widget-image"
+								data-id="e17610d" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="400" height="508"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20508'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2317" alt="sagama industrial"
+										title="sagama industrial"
+										data-lazy-src="wp-content/uploads/trabajador-sagama-min-min.png"><noscript><img
+											decoding="async" width="400" height="508"
+											src="wp-content/uploads/trabajador-sagama-min-min.png"
+											class="attachment-full size-full wp-image-2317" alt="sagama industrial"
+											title="sagama industrial"></noscript>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-8c6d3cc"
+						data-id="8c6d3cc" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-d38cb77 elementor-widget elementor-widget-heading"
+								data-id="d38cb77" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h2 class="elementor-heading-title elementor-size-default">SOBRE NOSOTROS:</h2>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-7a46b44 elementor-widget elementor-widget-heading"
+								data-id="7a46b44" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-heading-title elementor-size-default">Somos una empresa
+										Peruana, dedicada a la fabricación y comercialización de muebles metálicos.
+										Contamos con un equipo de trabajo capacitado y comprometido con sus actividades,
+										con el fin de garantizar la satisfacción en nuestros clientes. </div>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-4b6c0fc elementor-align-center elementor-widget elementor-widget-button"
+								data-id="4b6c0fc" data-element_type="widget" data-widget_type="button.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+										<a class="elementor-button elementor-button-link elementor-size-sm"
+											href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+											id="btn-whatsapp-page">
+											<span class="elementor-button-content-wrapper">
+												<span class="elementor-button-icon elementor-align-icon-left">
+													<i aria-hidden="true" class="fab fa-whatsapp"></i> </span>
+												<span class="elementor-button-text">CONTACTENOS</span>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-4d42ac6 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="4d42ac6" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-3ff99f6"
+						data-id="3ff99f6" data-element_type="column"
+						data-settings='{"background_background":"classic"}'>
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-8c15e83 elementor-widget elementor-widget-image"
+								data-id="8c15e83" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-1852"
+										alt="Venta de Locker Met&aacute;lico Per&uacute;"
+										title="Venta de Locker Met&aacute;lico Per&uacute;"
+										data-lazy-src="wp-content/uploads/venta-lockers-metalicos.png"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/venta-lockers-metalicos.png"
+											class="attachment-full size-full wp-image-1852"
+											alt="Venta de Locker Met&aacute;lico Per&uacute;"
+											title="Venta de Locker Met&aacute;lico Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-fd2f649 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="fd2f649" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4c72387"
+										data-id="4c72387" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-7086818 elementor-widget elementor-widget-heading"
+												data-id="7086818" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="lockers-metalicos/index.html">Lockers Met&aacute;licos
+															<span class="title-product-home">para tu gimnasio</span></a>
+													</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-3d14322 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="3d14322" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-03b94cd"
+										data-id="03b94cd" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-ebb85da elementor-widget elementor-widget-heading"
+												data-id="ebb85da" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Son
+														muebles met&aacute;licos para el resguardo y el cuidado de
+														indumentaria. Este producto es usado en colegios, instituciones,
+														empresas y gimnasios. </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-25e0ece elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="25e0ece" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2da5e39"
+										data-id="2da5e39" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-540d4db elementor-button-success elementor-align-left elementor-mobile-align-left elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="540d4db" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="lockers-metalicos/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c6f21c9"
+										data-id="c6f21c9" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-ffeed00 elementor-align-right elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="ffeed00" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-4858d82"
+						data-id="4858d82" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-fa7b52c elementor-widget elementor-widget-image"
+								data-id="fa7b52c" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2328"
+										alt="Venta de Armarios Met&aacute;lico para Per&uacute;"
+										title="Venta de Armarios Met&aacute;lico para Per&uacute;"
+										data-lazy-src="wp-content/uploads/venta-de-armario-metalico-min.png"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/venta-de-armario-metalico-min.png"
+											class="attachment-full size-full wp-image-2328"
+											alt="Venta de Armarios Met&aacute;lico para Per&uacute;"
+											title="Venta de Armarios Met&aacute;lico para Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-52fe6f4 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="52fe6f4" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-3fb1612"
+										data-id="3fb1612" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-6acf470 elementor-widget elementor-widget-heading"
+												data-id="6acf470" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="armarios-metalicos/index.html">Armario
+															Met&aacute;licos <span class="title-product-home">para tu
+																oficina</span></a></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-2e26261 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="2e26261" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1f0d0f7"
+										data-id="1f0d0f7" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-5797f4c elementor-widget elementor-widget-heading"
+												data-id="5797f4c" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Un armario
+														met&aacute;lico es un mueble fabricado generalmente en chapa de
+														acero debidamente plegada, soldada y pintada.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-29bd9a8 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="29bd9a8" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-611c3c9"
+										data-id="611c3c9" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-2224e58 elementor-button-success elementor-align-left elementor-mobile-align-left elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="2224e58" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="armarios-metalicos/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-b725919"
+										data-id="b725919" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-fb1091a elementor-align-right elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="fb1091a" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-b64c89f"
+						data-id="b64c89f" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-23c606c elementor-widget elementor-widget-image"
+								data-id="23c606c" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2329"
+										alt="Venta de &Aacute;ngulos Ranurados Per&uacute;"
+										title="Venta de &Aacute;ngulos Ranurados Per&uacute;"
+										data-lazy-src="wp-content/uploads/archivador.jpg"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/archivador.jpg"
+											class="attachment-full size-full wp-image-2329"
+											alt="Venta de &Aacute;ngulos Ranurados Per&uacute;"
+											title="Venta de &Aacute;ngulos Ranurados Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-d047040 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="d047040" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1e91ffd"
+										data-id="1e91ffd" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-2a8a29e elementor-widget elementor-widget-heading"
+												data-id="2a8a29e" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="angulos-ranurados/index.html">Archivador Metálico
+															<span class="title-product-home">para tu tienda</span></a>
+													</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-a15aa97 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="a15aa97" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-a7952d9"
+										data-id="a7952d9" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-3fa3367 elementor-widget elementor-widget-heading"
+												data-id="3fa3367" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Las
+														estanter&iacute;as de &aacute;ngulo ranurado son un sistema de
+														almacenaje modular excelente para cargas ligeras de forma
+														manual.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-237840b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="237840b" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8275de6"
+										data-id="8275de6" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-4c0bce7 elementor-button-success elementor-align-left elementor-mobile-align-left elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="4c0bce7" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="angulos-ranurados/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-883114d"
+										data-id="883114d" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-6d7b388 elementor-align-right elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="6d7b388" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-58c2edd"
+						data-id="58c2edd" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-663d85e elementor-widget elementor-widget-image"
+								data-id="663d85e" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2331"
+										alt="Venta de Anaqueles en Lima, Per&uacute;"
+										title="Venta de Anaqueles en Lima, Per&uacute;"
+										data-lazy-src="wp-content/uploads/vitrinametalicasierra.jpg"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/venta-de-anaqueles-min.png"
+											class="attachment-full size-full wp-image-2331"
+											alt="Venta de Anaqueles en Lima, Per&uacute;"
+											title="Venta de Anaqueles en Lima, Per&uacute;"></noscript>
+								</div>
+							</div>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-e7bd16f elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="e7bd16f" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-a28d524"
+										data-id="a28d524" data-element_type="column"
+										data-settings='{"background_background":"classic"}'>
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-f4ba0b3 elementor-widget elementor-widget-heading"
+												data-id="f4ba0b3" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h3 class="elementor-heading-title elementor-size-default"><a
+															href="anaqueles-metalicos/index.html">Vitrinas Metalicas
+															<span class="title-product-home"><br>para tu
+																tienda</span></a></h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-f348dc7 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default"
+								data-id="f348dc7" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-d8fa1f5"
+										data-id="d8fa1f5" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-9af11b6 elementor-widget elementor-widget-heading"
+												data-id="9af11b6" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<p class="elementor-heading-title elementor-size-default">Son un
+														sencillo, pero efectivo sistema de almacenaje, el cual se
+														compone principalmente de postes ranurados y entrepa&ntilde;os
+														que sostienen la carga</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-3f6d04b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="3f6d04b" data-element_type="section"
+								data-settings='{"background_background":"classic"}'>
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5c25bc9"
+										data-id="5c25bc9" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-d049eef elementor-button-success elementor-align-left elementor-mobile-align-left elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="d049eef" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="anaqueles-metalicos/index.html" target="_blank">
+															<span class="elementor-button-content-wrapper">
+																<span class="elementor-button-text">Ver
+																	m&aacute;s</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c17df87"
+										data-id="c17df87" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-4d2a8a8 elementor-align-right elementor-widget-mobile__width-auto elementor-widget elementor-widget-button"
+												data-id="4d2a8a8" data-element_type="widget"
+												data-widget_type="button.default">
+												<div class="elementor-widget-container">
+													<div class="elementor-button-wrapper">
+														<a class="elementor-button elementor-button-link elementor-size-xs"
+															href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+															id="btn-whatsapp-page">
+															<span class="elementor-button-content-wrapper">
+																<span
+																	class="elementor-button-icon elementor-align-icon-left">
+																	<i aria-hidden="true" class="fab fa-whatsapp"></i>
+																</span>
+																<span class="elementor-button-text">COTIZA</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-6c34946 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="6c34946" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-16d7d66"
+						data-id="16d7d66" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-3aba3c8 elementor-widget elementor-widget-heading"
+								data-id="3aba3c8" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h4 class="elementor-heading-title elementor-size-default">NUESTROS PROYECTOS</h4>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-bfcfa72 elementor-widget elementor-widget-heading"
+								data-id="bfcfa72" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<p class="elementor-heading-title elementor-size-default">&Uacute;nete y se parte de
+										la familia Mobiliario Metalico Sierra Sur S.A.C</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-c594be9 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="c594be9" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-abeb0eb"
+						data-id="abeb0eb" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-8c411fd elementor-widget elementor-widget-image"
+								data-id="8c411fd" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="800" height="533"
+										src="wp-content/uploads/proyecto1.jpg"
+										class="attachment-full size-full wp-image-2336"
+										alt="Venta de Archivadores en Per&uacute; - Proyectos"
+										data-lazy-srcset="wp-content/uploads/proyecto1.jpg"
+										data-lazy-sizes="(max-width: 800px) 100vw, 00px"
+										title="Venta de Archivadores en Per&uacute; - Proyectos"
+										data-lazy-src="wp-content/uploads/venta-de-archivadores-peru-proyectos.jpg"><noscript><img
+											decoding="async" width="900" height="533"
+											src="wp-content/uploads/venta-de-archivadores-peru-proyectos.jpg"
+											class="attachment-full size-full wp-image-2336"
+											alt="Venta de Archivadores en Per&uacute; - Proyectos" srcset=""
+											sizes="(max-width: 800px) 100vw, 800px"
+											title="Venta de Archivadores en Per&uacute; - Proyectos"></noscript>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-2288b54 elementor-widget elementor-widget-heading"
+								data-id="2288b54" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h3 class="elementor-heading-title elementor-size-default">Proyecto de archivadores
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-69e931b"
+						data-id="69e931b" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-68c3f93 elementor-widget elementor-widget-image"
+								data-id="68c3f93" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="800" height="533"
+										src="wp-content/uploads/proyecto2.jpg"
+										class="attachment-full size-full wp-image-2336"
+										alt="Venta de Archivadores en Per&uacute; - Proyectos"
+										data-lazy-srcset="wp-content/uploads/proyecto2.jpg"
+										data-lazy-sizes="(max-width: 800px) 100vw, 00px"
+										title="Venta de Archivadores en Per&uacute; - Proyectos"
+										data-lazy-src="wp-content/uploads/venta-de-archivadores-peru-proyectos.jpg"><noscript><img
+											decoding="async" width="900" height="533"
+											src="wp-content/uploads/venta-de-archivadores-peru-proyectos.jpg"
+											class="attachment-full size-full wp-image-2336"
+											alt="Venta de Archivadores en Per&uacute; - Proyectos" srcset=""
+											sizes="(max-width: 800px) 100vw, 800px"
+											title="Venta de Archivadores en Per&uacute; - Proyectos"></noscript>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-9e520ea elementor-widget elementor-widget-heading"
+								data-id="9e520ea" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h3 class="elementor-heading-title elementor-size-default">Proyecto de racks para
+										almacenes</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-f7b27d3"
+						data-id="f7b27d3" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-4139479 elementor-widget elementor-widget-image"
+								data-id="4139479" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="800" height="533"
+										src="wp-content/uploads/proyecto3.jpg"
+										class="attachment-full size-full wp-image-2336"
+										alt="Venta de Archivadores en Per&uacute; - Proyectos"
+										data-lazy-srcset="wp-content/uploads/proyecto3.jpg"
+										data-lazy-sizes="(max-width: 800px) 100vw, 00px"
+										title="Venta de Archivadores en Per&uacute; - Proyectos"
+										data-lazy-src="wp-content/uploads/venta-de-archivadores-peru-proyectos.jpg"><noscript><img
+											decoding="async" width="900" height="533"
+											src="wp-content/uploads/venta-de-archivadores-peru-proyectos.jpg"
+											class="attachment-full size-full wp-image-2336"
+											alt="Venta de Archivadores en Per&uacute; - Proyectos" srcset=""
+											sizes="(max-width: 800px) 100vw, 800px"
+											title="Venta de Archivadores en Per&uacute; - Proyectos"></noscript>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-6656218 elementor-widget elementor-widget-heading"
+								data-id="6656218" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h3 class="elementor-heading-title elementor-size-default">Proyecto de mini racks
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-9e59063 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="9e59063" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-96c1c8c"
+						data-id="96c1c8c" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+
+
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-38878cb elementor-section-content-middle elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="38878cb" data-element_type="section"
+				data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":2321,"url":"https:\/\/sagama-industrial.com\/wp-content\/uploads\/sagama-industrial.jpg"}],"background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_slide_transition":"fade","background_slideshow_transition_duration":500}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-14e93eb"
+						data-id="14e93eb" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-99716b6 elementor-widget elementor-widget-image"
+								data-id="99716b6" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="550" height="550"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20550%20550'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2267" alt="Estantes metalicos en peru"
+										title="Estantes metalicos en peru"
+										data-lazy-src="wp-content/uploads/Estantes-metalicos-en-peru.png"><noscript><img
+											decoding="async" width="550" height="550"
+											src="wp-content/uploads/Estantes-metalicos-en-peru.png"
+											class="attachment-full size-full wp-image-2267"
+											alt="Estantes metalicos en peru"
+											title="Estantes metalicos en peru"></noscript>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-f7848af"
+						data-id="f7848af" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-c789675 elementor-widget elementor-widget-heading"
+								data-id="c789675" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h2 class="elementor-heading-title elementor-size-default">LOCKERS DE METAL EN LIMA
+									</h2>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-93ef954 elementor-widget elementor-widget-heading"
+								data-id="93ef954" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-heading-title elementor-size-default">Solicita tu presupuesto
+										de <h2 style="font-size:19px;display:inline;font-weight:400;line-height:26px;">
+											estantes industriales</h2> a medida, tenemos a los mejores a tu servicio.
+										&iexcl;Escr&iacute;benos ya!</div>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-faf3bb5 elementor-align-center elementor-widget elementor-widget-button"
+								data-id="faf3bb5" data-element_type="widget" data-widget_type="button.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+										<a class="elementor-button elementor-button-link elementor-size-sm"
+											href="https://wa.me/message/BQR52BRJJECWO1" target="_blank"
+											id="btn-whatsapp-page">
+											<span class="elementor-button-content-wrapper">
+												<span class="elementor-button-icon elementor-align-icon-left">
+													<i aria-hidden="true" class="fab fa-whatsapp"></i> </span>
+												<span class="elementor-button-text">CONTACTENOS</span>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-3586790 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="3586790" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-88da55e"
+						data-id="88da55e" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-412ef27 elementor-widget elementor-widget-accordion"
+								data-id="412ef27" data-element_type="widget" data-widget_type="accordion.default">
+								<div class="elementor-widget-container">
+									<style>
+										/*! elementor - v3.14.0 - 26-06-2023 */
+										.elementor-accordion {
+											text-align: left
+										}
+
+										.elementor-accordion .elementor-accordion-item {
+											border: 1px solid #d5d8dc
+										}
+
+										.elementor-accordion .elementor-accordion-item+.elementor-accordion-item {
+											border-top: none
+										}
+
+										.elementor-accordion .elementor-tab-title {
+											margin: 0;
+											padding: 15px 20px;
+											font-weight: 700;
+											line-height: 1;
+											cursor: pointer;
+											outline: none
+										}
+
+										.elementor-accordion .elementor-tab-title .elementor-accordion-icon {
+											display: inline-block;
+											width: 1.5em
+										}
+
+										.elementor-accordion .elementor-tab-title .elementor-accordion-icon svg {
+											width: 1em;
+											height: 1em
+										}
+
+										.elementor-accordion .elementor-tab-title .elementor-accordion-icon.elementor-accordion-icon-right {
+											float: right;
+											text-align: right
+										}
+
+										.elementor-accordion .elementor-tab-title .elementor-accordion-icon.elementor-accordion-icon-left {
+											float: left;
+											text-align: left
+										}
+
+										.elementor-accordion .elementor-tab-title .elementor-accordion-icon .elementor-accordion-icon-closed {
+											display: block
+										}
+
+										.elementor-accordion .elementor-tab-title .elementor-accordion-icon .elementor-accordion-icon-opened,
+										.elementor-accordion .elementor-tab-title.elementor-active .elementor-accordion-icon-closed {
+											display: none
+										}
+
+										.elementor-accordion .elementor-tab-title.elementor-active .elementor-accordion-icon-opened {
+											display: block
+										}
+
+										.elementor-accordion .elementor-tab-content {
+											display: none;
+											padding: 15px 20px;
+											border-top: 1px solid #d5d8dc
+										}
+
+										@media (max-width:767px) {
+											.elementor-accordion .elementor-tab-title {
+												padding: 12px 15px
+											}
+
+											.elementor-accordion .elementor-tab-title .elementor-accordion-icon {
+												width: 1.2em
+											}
+
+											.elementor-accordion .elementor-tab-content {
+												padding: 7px 15px
+											}
+										}
+
+										.e-con-inner>.elementor-widget-accordion,
+										.e-con>.elementor-widget-accordion {
+											width: var(--container-widget-width);
+											--flex-grow: var(--container-widget-flex-grow)
+										}
+									</style>
+									<div class="elementor-accordion">
+										<div class="elementor-accordion-item">
+											<div id="elementor-tab-title-6831" class="elementor-tab-title" data-tab="1"
+												role="button" aria-controls="elementor-tab-content-6831"
+												aria-expanded="false">
+												<span class="elementor-accordion-icon elementor-accordion-icon-right"
+													aria-hidden="true">
+													<span class="elementor-accordion-icon-closed"><i
+															class="fas fa-plus"></i></span>
+													<span class="elementor-accordion-icon-opened"><i
+															class="fas fa-minus"></i></span>
+												</span>
+												<a class="elementor-accordion-title" tabindex="0">&iquest;Qu&eacute; es
+													una estanter&iacute;a met&aacute;lica?</a>
+											</div>
+											<div id="elementor-tab-content-6831"
+												class="elementor-tab-content elementor-clearfix" data-tab="1"
+												role="region" aria-labelledby="elementor-tab-title-6831">
+												<p>Una estanter&iacute;a met&aacute;lica es una estructura en la cual se
+													alojan mercanc&iacute;as, productos y dem&aacute;s que suele estar
+													en almacenes o en espacios de almacenamiento.</p>
+											</div>
+										</div>
+										<div class="elementor-accordion-item">
+											<div id="elementor-tab-title-6832" class="elementor-tab-title" data-tab="2"
+												role="button" aria-controls="elementor-tab-content-6832"
+												aria-expanded="false">
+												<span class="elementor-accordion-icon elementor-accordion-icon-right"
+													aria-hidden="true">
+													<span class="elementor-accordion-icon-closed"><i
+															class="fas fa-plus"></i></span>
+													<span class="elementor-accordion-icon-opened"><i
+															class="fas fa-minus"></i></span>
+												</span>
+												<a class="elementor-accordion-title" tabindex="0">&iquest;Cu&aacute;nto
+													mide una estanter&iacute;a met&aacute;lica?</a>
+											</div>
+											<div id="elementor-tab-content-6832"
+												class="elementor-tab-content elementor-clearfix" data-tab="2"
+												role="region" aria-labelledby="elementor-tab-title-6832">
+												<h3 class="h2-camuflados">&iquest;Cu&aacute;nto mide una
+													estanter&iacute;a met&aacute;lica?</h3>.
+												En general, las medidas de una estanter&iacute;a met&aacute;lica
+												depender&aacute;n del espacio dispuesto en el almac&eacute;n, siendo de
+												m&aacute;s de dos metros de alto y de ancho de igual manera.
+											</div>
+										</div>
+										<div class="elementor-accordion-item">
+											<div id="elementor-tab-title-6833" class="elementor-tab-title" data-tab="3"
+												role="button" aria-controls="elementor-tab-content-6833"
+												aria-expanded="false">
+												<span class="elementor-accordion-icon elementor-accordion-icon-right"
+													aria-hidden="true">
+													<span class="elementor-accordion-icon-closed"><i
+															class="fas fa-plus"></i></span>
+													<span class="elementor-accordion-icon-opened"><i
+															class="fas fa-minus"></i></span>
+												</span>
+												<a class="elementor-accordion-title" tabindex="0">&iquest;Cu&aacute;les
+													son los precios de las estanter&iacute;as met&aacute;lica?</a>
+											</div>
+											<div id="elementor-tab-content-6833"
+												class="elementor-tab-content elementor-clearfix" data-tab="3"
+												role="region" aria-labelledby="elementor-tab-title-6833">
+												<h2 class="h2-camuflados">&iquest;Cu&aacute;les son los precios de las
+													estanter&iacute;as met&aacute;lica?</h2>.
+												Los precios depender&aacute;n en buena medida del tipo de
+												estanter&iacute;a, las medidas que est&aacute; tenga y del material en
+												la que est&eacute; hecha.
+											</div>
+										</div>
+										<div class="elementor-accordion-item">
+											<div id="elementor-tab-title-6834" class="elementor-tab-title" data-tab="4"
+												role="button" aria-controls="elementor-tab-content-6834"
+												aria-expanded="false">
+												<span class="elementor-accordion-icon elementor-accordion-icon-right"
+													aria-hidden="true">
+													<span class="elementor-accordion-icon-closed"><i
+															class="fas fa-plus"></i></span>
+													<span class="elementor-accordion-icon-opened"><i
+															class="fas fa-minus"></i></span>
+												</span>
+												<a class="elementor-accordion-title" tabindex="0">&iquest;Qu&eacute; es
+													una estanter&iacute;a en log&iacute;stica?</a>
+											</div>
+											<div id="elementor-tab-content-6834"
+												class="elementor-tab-content elementor-clearfix" data-tab="4"
+												role="region" aria-labelledby="elementor-tab-title-6834">
+												<h3 class="h2-camuflados">&iquest;Qu&eacute; es una estanter&iacute;a en
+													log&iacute;stica?</h3>.
+												Una estanter&iacute;a en log&iacute;stica, ser&iacute;a parte del
+												sistema de almacenamiento y fundamental en la cadena de suministro,
+												siendo el pilar para lograr un manejo eficiente, r&aacute;pido y eficaz
+												de todo lo que va del almac&eacute;n hacia afuera y adentro.
+											</div>
+										</div>
+										<div class="elementor-accordion-item">
+											<div id="elementor-tab-title-6835" class="elementor-tab-title" data-tab="5"
+												role="button" aria-controls="elementor-tab-content-6835"
+												aria-expanded="false">
+												<span class="elementor-accordion-icon elementor-accordion-icon-right"
+													aria-hidden="true">
+													<span class="elementor-accordion-icon-closed"><i
+															class="fas fa-plus"></i></span>
+													<span class="elementor-accordion-icon-opened"><i
+															class="fas fa-minus"></i></span>
+												</span>
+												<a class="elementor-accordion-title" tabindex="0">&iquest;Cu&aacute;les
+													son los tipos de estanter&iacute;as?</a>
+											</div>
+											<div id="elementor-tab-content-6835"
+												class="elementor-tab-content elementor-clearfix" data-tab="5"
+												role="region" aria-labelledby="elementor-tab-title-6835">
+												<h3 class="h2-camuflados">&iquest;Cu&aacute;les son los tipos de
+													estanter&iacute;as?</h3>.
+												Entre los tipos de estanter&iacute;as que normalmente se suelen utilizar
+												est&aacute;n las estanter&iacute;as m&oacute;viles, convencionales,
+												compactas, din&aacute;micas, cantil&eacute;ver, adem&aacute;s de las
+												estanter&iacute;as para palets y las estanter&iacute;as manuales.
+											</div>
+										</div>
+										<div class="elementor-accordion-item">
+											<div id="elementor-tab-title-6836" class="elementor-tab-title" data-tab="6"
+												role="button" aria-controls="elementor-tab-content-6836"
+												aria-expanded="false">
+												<span class="elementor-accordion-icon elementor-accordion-icon-right"
+													aria-hidden="true">
+													<span class="elementor-accordion-icon-closed"><i
+															class="fas fa-plus"></i></span>
+													<span class="elementor-accordion-icon-opened"><i
+															class="fas fa-minus"></i></span>
+												</span>
+												<a class="elementor-accordion-title" tabindex="0">&iquest;D&oacute;nde
+													comprar estanter&iacute;as met&aacute;licas en Lima,
+													Per&uacute;?</a>
+											</div>
+											<div id="elementor-tab-content-6836"
+												class="elementor-tab-content elementor-clearfix" data-tab="6"
+												role="region" aria-labelledby="elementor-tab-title-6836">
+												<h2 class="h2-camuflados">&iquest;D&oacute;nde comprar
+													estanter&iacute;as met&aacute;licas en Lima, Per&uacute;?</h2>.
+												Somos Mobiliario Metalico Sierra Sur S.A.C y contamos con
+												estanter&iacute;as met&aacute;licas, puedes comprar en nuestro local o
+												tambi&eacute;n realizamos env&iacute;os a nivel nacional.
+											</div>
+										</div>
+										<script
+											type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"\u00bfQu\u00e9 es una estanter\u00eda met\u00e1lica?","acceptedAnswer":{"@type":"Answer","text":"<p>Una estanter\u00eda met\u00e1lica es una estructura en la cual se alojan mercanc\u00edas, productos y dem\u00e1s que suele estar en almacenes o en espacios de almacenamiento.<\/p>"}},{"@type":"Question","name":"\u00bfCu\u00e1nto mide una estanter\u00eda met\u00e1lica?","acceptedAnswer":{"@type":"Answer","text":"<h3 class=\"h2-camuflados\">\u00bfCu\u00e1nto mide una estanter\u00eda met\u00e1lica?<\/h3>.\nEn general, las medidas de una estanter\u00eda met\u00e1lica depender\u00e1n del espacio dispuesto en el almac\u00e9n, siendo de m\u00e1s de dos metros de alto y de ancho de igual manera."}},{"@type":"Question","name":"\u00bfCu\u00e1les son los precios de las estanter\u00edas met\u00e1lica?","acceptedAnswer":{"@type":"Answer","text":"<h2 class=\"h2-camuflados\">\u00bfCu\u00e1les son los precios de las estanter\u00edas met\u00e1lica?<\/h2>.\nLos precios depender\u00e1n en buena medida del tipo de estanter\u00eda, las medidas que est\u00e1 tenga y del material en la que est\u00e9 hecha."}},{"@type":"Question","name":"\u00bfQu\u00e9 es una estanter\u00eda en log\u00edstica?","acceptedAnswer":{"@type":"Answer","text":"<h3 class=\"h2-camuflados\">\u00bfQu\u00e9 es una estanter\u00eda en log\u00edstica?<\/h3>.\nUna estanter\u00eda en log\u00edstica, ser\u00eda parte del sistema de almacenamiento y fundamental en la cadena de suministro, siendo el pilar para lograr un manejo eficiente, r\u00e1pido y eficaz de todo lo que va del almac\u00e9n hacia afuera y adentro."}},{"@type":"Question","name":"\u00bfCu\u00e1les son los tipos de estanter\u00edas?","acceptedAnswer":{"@type":"Answer","text":"<h3 class=\"h2-camuflados\">\u00bfCu\u00e1les son los tipos de estanter\u00edas?<\/h3>.\nEntre los tipos de estanter\u00edas que normalmente se suelen utilizar est\u00e1n las estanter\u00edas m\u00f3viles, convencionales, compactas, din\u00e1micas, cantil\u00e9ver, adem\u00e1s de las estanter\u00edas para palets y las estanter\u00edas manuales."}},{"@type":"Question","name":"\u00bfD\u00f3nde comprar estanter\u00edas met\u00e1licas en Lima, Per\u00fa?","acceptedAnswer":{"@type":"Answer","text":"<h2 class=\"h2-camuflados\">\u00bfD\u00f3nde comprar estanter\u00edas met\u00e1licas en Lima, Per\u00fa?<\/h2>.\nSomos la empresa Sagama Industrial y contamos con estanter\u00edas met\u00e1licas, puedes comprar en nuestro local o tambi\u00e9n realizamos env\u00edos a nivel nacional."}}]}</script>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-0b09636"
+						data-id="0b09636" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-d4348d0 elementor-widget elementor-widget-image"
+								data-id="d4348d0" data-element_type="widget" data-widget_type="image.default">
+								<div class="elementor-widget-container">
+									<img decoding="async" width="800" height="533"
+										src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20533'%3E%3C/svg%3E"
+										class="attachment-full size-full wp-image-2337"
+										alt="Venta de Racks para Alamacenes en Lima, Per&uacute; - Proyectos"
+										data-lazy-srcset="wp-content/uploads/proyectos.jpg, wp-content/uploads/proyectos.jpg"
+										data-lazy-sizes="(max-width: 800px) 100vw, 800px"
+										title="Venta de Racks para Alamacenes en Lima, Per&uacute; - Proyectos"
+										data-lazy-src=""><noscript><img decoding="async" width="800" height="533"
+											src="wp-content/uploads/rack-selectivo-venta-de-proyectos.jpg"
+											class="attachment-full size-full wp-image-2337"
+											alt="Venta de Racks para Alamacenes en Lima, Per&uacute; - Proyectos"
+											srcset="," sizes="(max-width: 800px) 100vw, 800px"
+											title="Venta de Racks para Alamacenes en Lima, Per&uacute; - Proyectos"></noscript>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-61911bb elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="61911bb" data-element_type="section"
+				data-settings='{"background_background":"slideshow","background_slideshow_gallery":[{"id":2321,"url":"https:\/\/sagama-industrial.com\/wp-content\/uploads\/sagama-industrial.jpg"}],"background_slideshow_loop":"yes","background_slideshow_slide_duration":5000,"background_slideshow_slide_transition":"fade","background_slideshow_transition_duration":500}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a97fc10"
+						data-id="a97fc10" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-ad1f16c elementor-widget elementor-widget-heading"
+								data-id="ad1f16c" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<h4 class="elementor-heading-title elementor-size-default">QU&Eacute;DATE CONECTADO
+									</h4>
+								</div>
+							</div>
+							<div class="elementor-element elementor-element-e5999dc elementor-widget elementor-widget-heading"
+								data-id="e5999dc" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+									<p class="elementor-heading-title elementor-size-default">Suscr&iacute;bete a
+										nuestro bolet&iacute;n.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-7398207"
+						data-id="7398207" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-71399fc elementor-button-align-stretch elementor-widget elementor-widget-form"
+								data-id="71399fc" data-element_type="widget"
+								data-settings='{"button_width":"30","step_next_label":"Siguiente","step_previous_label":"Anterior","step_type":"number_text","step_icon_shape":"circle"}'
+								data-widget_type="form.default">
+								<div class="elementor-widget-container">
+									<form class="elementor-form" method="post" name="Nuevo formulario">
+										<input type="hidden" name="post_id" value="18">
+										<input type="hidden" name="form_id" value="71399fc">
+										<input type="hidden" name="referer_title"
+											value="&#9655; Estanter&iacute;as Met&aacute;licas | Implementaci&oacute;n de Almacenes &#10004;&#65039;">
+
+										<input type="hidden" name="queried_id" value="18">
+
+										<div class="elementor-form-fields-wrapper elementor-labels-">
+											<div
+												class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-70 elementor-field-required">
+												<label for="form-field-email"
+													class="elementor-field-label elementor-screen-only">
+													Correo electr&oacute;nico </label>
+												<input size="1" type="email" name="form_fields[email]"
+													id="form-field-email"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Ingresa tu direcci&oacute;n de correo electr&oacute;nico"
+													required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-30 e-form__buttons">
+												<button type="submit" class="elementor-button elementor-size-md">
+													<span>
+														<span class=" elementor-button-icon">
+														</span>
+														<span class="elementor-button-text">Enviar</span>
+													</span>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-225d733 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="225d733" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0ed1d01"
+						data-id="0ed1d01" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-da7839e elementor-widget elementor-widget-heading"
+								data-id="da7839e" data-element_type="widget" data-widget_type="heading.default">
+								<div class="elementor-widget-container">
+
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-7c7c4c2 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="7c7c4c2" data-element_type="section" data-settings='{"background_background":"classic"}'>
+				<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4bf107b"
+						data-id="4bf107b" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-d05027c elementor-widget elementor-widget-google_maps"
+								data-id="d05027c" data-element_type="widget" data-widget_type="google_maps.default">
+								<div class="elementor-widget-container">
+									<style>
+										/*! elementor - v3.14.0 - 26-06-2023 */
+										.elementor-widget-google_maps .elementor-widget-container {
+											overflow: hidden
+										}
+
+										.elementor-widget-google_maps .elementor-custom-embed {
+											line-height: 0
+										}
+
+										.elementor-widget-google_maps iframe {
+											height: 300px
+										}
+									</style>
+									<div class="elementor-custom-embed">
+										<iframe
+											src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5521.380790616545!2d-76.97573628679328!3d-11.890753334631423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105db90ef83f6bd%3A0xee13f786ad968b23!2sMobiliario%20Met%C3%A1lico%20Sierra%20Sur%20S.A.C!5e0!3m2!1ses-419!2spe!4v1692026258732!5m2!1ses-419!2spe"
+											width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+											referrerpolicy="no-referrer-when-downgrade"></iframe>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9c58140"
+						data-id="9c58140" data-element_type="column"
+						data-settings='{"background_background":"classic"}'>
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div class="elementor-element elementor-element-9e08e1a elementor-button-align-center elementor-widget elementor-widget-form"
+								data-id="9e08e1a" data-element_type="widget"
+								data-settings='{"step_next_label":"Next","step_previous_label":"Previous","button_width":"100","step_type":"number_text","step_icon_shape":"circle"}'
+								data-widget_type="form.default">
+								<div class="elementor-widget-container">
+									<form class="elementor-form" method="post" name="New Form">
+										<input type="hidden" name="post_id" value="18">
+										<input type="hidden" name="form_id" value="9e08e1a">
+										<input type="hidden" name="referer_title"
+											value="&#9655; Estanter&iacute;as Met&aacute;licas | Implementaci&oacute;n de Almacenes &#10004;&#65039;">
+
+										<input type="hidden" name="queried_id" value="18">
+
+										<div class="elementor-form-fields-wrapper elementor-labels-">
+											<div
+												class="elementor-field-type-html elementor-field-group elementor-column elementor-field-group-nombre elementor-col-100">
+												<h6 style="text-align:center">Solicitar Cotizaci&oacute;n</h6>
+											</div>
+											<div
+												class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_7bda6ab elementor-col-50 elementor-field-required">
+												<label for="form-field-field_7bda6ab"
+													class="elementor-field-label elementor-screen-only">
+													Nombre </label>
+												<input size="1" type="text" name="form_fields[field_7bda6ab]"
+													id="form-field-field_7bda6ab"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Nombre" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-apellido elementor-col-50 elementor-field-required">
+												<label for="form-field-apellido"
+													class="elementor-field-label elementor-screen-only">
+													Apellido </label>
+												<input size="1" type="text" name="form_fields[apellido]"
+													id="form-field-apellido"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Apellido" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-ruc elementor-col-50 elementor-field-required">
+												<label for="form-field-ruc"
+													class="elementor-field-label elementor-screen-only">
+													RUC </label>
+												<input size="1" type="text" name="form_fields[ruc]" id="form-field-ruc"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="RUC" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50 elementor-field-required">
+												<label for="form-field-email"
+													class="elementor-field-label elementor-screen-only">
+													Email </label>
+												<input size="1" type="email" name="form_fields[email]"
+													id="form-field-email"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Correo" required="required" aria-required="true">
+											</div>
+											<div
+												class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-telefono elementor-col-100 elementor-field-required">
+												<label for="form-field-telefono"
+													class="elementor-field-label elementor-screen-only">
+													Tel&eacute;fono </label>
+												<input size="1" type="tel" name="form_fields[telefono]"
+													id="form-field-telefono"
+													class="elementor-field elementor-size-sm  elementor-field-textual"
+													placeholder="Tel&eacute;fono" required="required"
+													aria-required="true" pattern="[0-9()#&amp;+*-=.]+"
+													title="Solo se aceptan n&uacute;meros y caracteres de tel&eacute;fono (#,-,*,etc).">
+
+											</div>
+											<div
+												class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-mensaje elementor-col-100 elementor-field-required">
+												<label for="form-field-mensaje"
+													class="elementor-field-label elementor-screen-only">
+													Escribe su mensaje </label>
+												<textarea
+													class="elementor-field-textual elementor-field  elementor-size-sm"
+													name="form_fields[mensaje]" id="form-field-mensaje" rows="4"
+													placeholder="Escribe su mensaje" required="required"
+													aria-required="true"></textarea>
+											</div>
+											<div
+												class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+												<button type="submit" class="elementor-button elementor-size-sm">
+													<span>
+														<span class=" elementor-button-icon">
+														</span>
+														<span class="elementor-button-text">ENVIAR</span>
+													</span>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<footer class="main-content-footer">
+				<div class="child-content-footer">
+
+					<!-- widgets footer -->
+					<div class="main-foooter-widgets">
+						<div class="main-widget">
+
+							<div class="main-rrss">
+								<ul class="list-rrss">
+									<li>
+										<a target="_blank" href="https://goo.gl/maps/uJMuFcqvec9QXsVN6"
+											title="Google My Business"><img width="28px"
+												src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%200'%3E%3C/svg%3E"
+												data-lazy-src="wp-content/themes/fyn/img/icon-gmb.png"><noscript><img
+													width="28px"
+													src="wp-content/themes/fyn/img/icon-gmb.png"></noscript></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="main-widget">
+							<div>
+								<h5 class="wp-block-heading">Datos de Contacto</h5>
+							</div>
+							<div>
+								<ul>
+									<li>Teléfono: 936 407 935</li>
+
+
+
+									<li>E-mail: <a
+											href="mobiliariometalicosierrasur@gmail.com">mobiliariometalicosierrasur@gmail.com</a>
+									</li>
+
+
+
+									<li>Ubicación: <a rel="noreferrer noopener"
+											href="https://goo.gl/maps/ALTXsjSH6sCtwiSR7" target="_blank">: Mza. Z Lote.
+											01 Sec. Los Jasmines El Valle Lima - Huarochiri - San Antonio</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="main-widget">
+							<div>
+								<h5 class="wp-block-heading">Nuestros Productos</h5>
+							</div>
+							<div>
+								<ul>
+									<li><a href="index.html">Armarios Metálicos</a></li>
+									<li><a href="estanterias-moviles/index.html">Lockers Metálicos</a></li>
+									<li><a href="racks-industriales/index.html">Escritorios Metálicos</a></li>
+									<li><a href="archivadores-metalicos/index.html">Archivadores Metálicos</a></li>
+									<li><a href="armarios-metalicos/index.html">Ropero Metálicos</a></li>
+									<li><a href="lockers-metalicos/index.html">Vitrina Clínico Metálicos</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="main-widget">
+							<div>
+								<h5 class="wp-block-heading">Horario de Atención</h5>
+							</div>
+							<div>
+								<ul>
+									<li>Lun a Vi: 8:00 - 18:00 </li>
+
+
+
+									<li>Sábado:8:00 - 13:00 </li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<small class="copyright">© Copyright 2023 <a href="index.html">Mobiliario Metalico Sierra Sur
+						s.a.c</a></small>
+			</footer>
+
+
+
+			<!-- GTM Container placement set to footer -->
+			<!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6N4587" height="0" width="0"
+					style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+			<!-- End Google Tag Manager (noscript) -->
+			<div class="main-btns-movil">
+
+				<!-- ubicación -->
+
+				<!-- solicita cotización -->
+
+				<!-- call -->
+			</div>
+
+
+			<div class="main-form-pop-movil">
+				<div class="form-pop-movil">
+					<button class="btn-close"><i class="icon-cancel"></i></button>
+				</div>
+			</div>
+
+
+			<!-- whatsapp -->
+
+
+			<a class="btns-movil-whatsapp" target="_blank" href="https://wa.me/message/BQR52BRJJECWO1">
+				<i class="icon-whatsapp"></i>
+			</a>
+
+
+			<div class="box-btn-movil-call-bottom-fixed">
+
+				<!-- btn movil call bottom fixed -->
+				<a class="btn-movil-call-bottom-fixed" href="tel:936 407 935">
+					<i class="icon-phone"></i>
+					<span>¡Llamar Ahora!</span>
+				</a>
+
+			</div>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+			<script type='text/javascript' id='rocket-preload-links-js-extra'>
+				/* <![CDATA[ */
+				var RocketPreloadLinksConfig = { "excludeUris": "\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm", "siteUrl": "https:\/\/sagama-industrial.com", "onHoverDelay": "100", "rateThrottle": "3" };
+				/* ]]> */
+			</script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("index.html")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("index.html")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+			<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript'
+				src='wp-content/cache/min/1/wp-content/themes/fyn/scriptc1d6.js?ver=1688219401' id='script-js'
+				defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/imagesloaded.mineda1.js?ver=4.1.4' id='imagesloaded-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.mina1c3.js?ver=3.14.1'
+				id='elementor-pro-webpack-runtime-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor/assets/js/webpack.runtime.mina1c3.js?ver=3.14.1'
+				id='elementor-webpack-runtime-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/jquery/jquery.min5aed.js?ver=3.6.4' id='jquery-core-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/jquery/jquery-migrate.min6b00.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor/assets/js/frontend-modules.mina1c3.js?ver=3.14.1'
+				id='elementor-frontend-modules-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/dist/vendor/wp-polyfill-inert.min0226.js?ver=3.1.2' id='wp-polyfill-inert-js'
+				defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/dist/vendor/regenerator-runtime.min8fa4.js?ver=0.13.11' id='regenerator-runtime-js'
+				defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/dist/vendor/wp-polyfill.min2c7c.js?ver=3.15.0' id='wp-polyfill-js'></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/dist/hooks.min6c65.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/dist/i18n.mine57b.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/sagama-industrial.com\/wp-admin\/admin-ajax.php","nonce":"80a2619b4f","urls":{"assets":"https:\/\/sagama-industrial.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/sagama-industrial.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"es_ES","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/sagama-industrial.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor-pro/assets/js/frontend.mina1c3.js?ver=3.14.1'
+				id='elementor-pro-frontend-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2'
+				id='elementor-waypoints-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-includes/js/jquery/ui/core.min3f14.js?ver=1.13.2' id='jquery-ui-core-js' defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","download":"Descargar","downloadImage":"Descargar imagen","fullscreen":"Pantalla completa","zoom":"Zoom","share":"Compartir","playVideo":"Reproducir v\u00eddeo","previous":"Anterior","next":"Siguiente","close":"Cerrar","a11yCarouselWrapperAriaLabel":"Carrusel | Scroll horizontal: Flecha izquierda y derecha","a11yCarouselPrevSlideMessage":"Diapositiva anterior","a11yCarouselNextSlideMessage":"Diapositiva siguiente","a11yCarouselFirstSlideMessage":"Esta es la primera diapositiva","a11yCarouselLastSlideMessage":"Esta es la \u00faltima diapositiva","a11yCarouselPaginationBulletMessage":"Ir a la diapositiva"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"M\u00f3vil vertical","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"M\u00f3vil horizontal","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tableta vertical","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tableta horizontal","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Pantalla grande","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.14.1","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"landing-pages":true,"page-transitions":true,"notes":true,"loop":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/sagama-industrial.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":18,"title":"%E2%96%B7%20Estanter%C3%ADas%20Met%C3%A1licas%20%7C%20Implementaci%C3%B3n%20de%20Almacenes%20%E2%9C%94%EF%B8%8F","excerpt":"","featuredImage":false}};
+</script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor/assets/js/frontend.mina1c3.js?ver=3.14.1' id='elementor-frontend-js'
+				defer></script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript'
+				src='wp-content/plugins/elementor-pro/assets/js/elements-handlers.mina1c3.js?ver=3.14.1'
+				id='pro-elements-handlers-js' defer></script>
+			<script>window.lazyLoadOptions = { elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]", data_src: "lazy-src", data_srcset: "lazy-srcset", data_sizes: "lazy-sizes", class_loading: "lazyloading", class_loaded: "lazyloaded", threshold: 300, callback_loaded: function (element) { if (element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible") { if (element.classList.contains("lazyloaded")) { if (typeof window.jQuery != "undefined") { if (jQuery.fn.fitVids) { jQuery(element).parent().fitVids() } } } } } }; window.addEventListener('LazyLoad::Initialized', function (e) {
+					var lazyLoadInstance = e.detail.instance; if (window.MutationObserver) {
+						var observer = new MutationObserver(function (mutations) {
+							var image_count = 0; var iframe_count = 0; var rocketlazy_count = 0; mutations.forEach(function (mutation) {
+								for (i = 0; i < mutation.addedNodes.length; i++) {
+									if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') { continue }
+									if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') { continue }
+									images = mutation.addedNodes[i].getElementsByTagName('img'); is_image = mutation.addedNodes[i].tagName == "IMG"; iframes = mutation.addedNodes[i].getElementsByTagName('iframe'); is_iframe = mutation.addedNodes[i].tagName == "IFRAME"; rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload'); image_count += images.length; iframe_count += iframes.length; rocketlazy_count += rocket_lazy.length; if (is_image) { image_count += 1 }
+									if (is_iframe) { iframe_count += 1 }
+								}
+							}); if (image_count > 0 || iframe_count > 0 || rocketlazy_count > 0) { lazyLoadInstance.update() }
+						}); var b = document.getElementsByTagName("body")[0]; var config = { childList: !0, subtree: !0 }; observer.observe(b, config)
+					}
+				}, !1)</script>
+			<script data-no-minify="1" async
+				src="wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+			<script>function lazyLoadThumb(e) { var t = '<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>', a = '<div class="play"></div>'; return t.replace("ID", e) + a } function lazyLoadYoutubeIframe() { var e = document.createElement("iframe"), t = "ID?autoplay=1"; t += 0 === this.dataset.query.length ? '' : '&' + this.dataset.query; e.setAttribute("src", t.replace("ID", this.dataset.src)), e.setAttribute("frameborder", "0"), e.setAttribute("allowfullscreen", "1"), e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"), this.parentNode.replaceChild(e, this) } document.addEventListener("DOMContentLoaded", function () { var e, t, a = document.getElementsByClassName("rll-youtube-player"); for (t = 0; t < a.length; t++)e = document.createElement("div"), e.setAttribute("data-id", a[t].dataset.id), e.setAttribute("data-query", a[t].dataset.query), e.setAttribute("data-src", a[t].dataset.src), e.innerHTML = lazyLoadThumb(a[t].dataset.id), e.onclick = lazyLoadYoutubeIframe, a[t].appendChild(e) });</script>
+			<script>class RocketElementorAnimation { constructor() { this.deviceMode = document.createElement("span"), this.deviceMode.id = "elementor-device-mode", this.deviceMode.setAttribute("class", "elementor-screen-only"), document.body.appendChild(this.deviceMode) } _detectAnimations() { let t = getComputedStyle(this.deviceMode, ":after").content.replace(/"/g, ""); this.animationSettingKeys = this._listAnimationSettingsKeys(t), document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t => { const e = t.getBoundingClientRect(); if (e.bottom >= 0 && e.top <= window.innerHeight) try { this._animateElement(t) } catch (t) { } }) } _animateElement(t) { const e = JSON.parse(t.dataset.settings), i = e._animation_delay || e.animation_delay || 0, n = e[this.animationSettingKeys.find(t => e[t])]; if ("none" === n) return void t.classList.remove("elementor-invisible"); t.classList.remove(n), this.currentAnimation && t.classList.remove(this.currentAnimation), this.currentAnimation = n; let s = setTimeout(() => { t.classList.remove("elementor-invisible"), t.classList.add("animated", n), this._removeAnimationSettings(t, e) }, i); window.addEventListener("rocket-startLoading", function () { clearTimeout(s) }) } _listAnimationSettingsKeys(t = "mobile") { const e = [""]; switch (t) { case "mobile": e.unshift("_mobile"); case "tablet": e.unshift("_tablet"); case "desktop": e.unshift("_desktop") }const i = []; return ["animation", "_animation"].forEach(t => { e.forEach(e => { i.push(t + e) }) }), i } _removeAnimationSettings(t, e) { this._listAnimationSettingsKeys().forEach(t => delete e[t]), t.dataset.settings = JSON.stringify(e) } static run() { const t = new RocketElementorAnimation; requestAnimationFrame(t._detectAnimations.bind(t)) } } document.addEventListener("DOMContentLoaded", RocketElementorAnimation.run);</script>
+</body>
+
+<!-- Mirrored from sagama-industrial.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Jul 2023 22:25:41 GMT -->
+
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1689966735 -->
